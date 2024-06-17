@@ -24,7 +24,10 @@ def fetch_data(url):
         rating = movie.find("span", class_ = "iconInfo-text")
         rating = rating.text.strip()
         # 分類
-        category = tmp[2].text.strip().replace("• ", "")
+        if len(tmp) == 3:
+            category = tmp[2].text.strip().replace("• ", "")
+        else:
+            category = "尚未分類"
         # 分級
         level = movie.find("span", class_ = "glnBadge-text")
         level = level.text.strip()
@@ -36,3 +39,4 @@ fetch_data(url)
 
 df = pd.DataFrame(data_list, columns=["電影名稱", "時長", "上映時間", "評分", "分類", "分級"])
 df.to_excel("movie_online.xlsx", index=False, engine="openpyxl")
+print("資料轉換xlsx成功")
