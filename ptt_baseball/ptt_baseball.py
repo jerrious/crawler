@@ -52,6 +52,6 @@ for a in articles:
 # print("資料轉換json成功")
 
 # 資料轉換xlsx
-# df = pd.DataFrame(data_list)
-# df.to_excel("ptt_baseball.xlsx", index=False, engine="openpyxl")
-# print("資料轉換xlsx成功")
+df = pd.DataFrame(data_list)
+df.to_excel("ptt_baseball.xlsx", index=False, engine="openpyxl")
+print("資料轉換xlsx成功")

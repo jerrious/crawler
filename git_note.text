@@ -1,0 +1,15 @@
+上傳github
+git remote add origin https://github.com/jerrious/crawler.git
+git branch -M main
+git push -u origin main
+
+檢查git狀態
+git status
+
+全部加入git待儲存區
+git add .
+將app.py加入待儲存區
+git app.py
+
+將待儲存區所有資料更新儲存
+git commit -m "更新之處"
